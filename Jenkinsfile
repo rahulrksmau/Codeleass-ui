@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo "Starting pipeline"
                 script {
-                    tpJobRun agentId: 'QlDz3blr30-qNfbOz0sv3A', executionParameters: '', jobId: 'h_EaWZe1jUaVTDerpkTgjA', junitResultsFile: '', projectId: 'MTLk7RYTv0SP7IaT0Sof0Q', waitJobFinishSeconds: 30
+                    tpJobRun agentId: 'upP2B4Jki0e3aK5QD0wZzQ', executionParameters: '', jobId: 'lgJdDeJlDUGUiytSP-f0AA', junitResultsFile: '', projectId: 'MTLk7RYTv0SP7IaT0Sof0Q', waitJobFinishSeconds: 30
                 }
             }
         }
