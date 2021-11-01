@@ -1,12 +1,10 @@
 pipeline {
     agent any
-
     stages {
-        stage ("Initialize") {
+        stage ("Run tests") {
             steps {
-                echo "Starting pipeline"
-                script {
-                    tpJobRun agentId: 'vHHgIHKLRkq8wheiuOFY9w', executionParameters: '', jobId: 'E6wU5BGAQ0mpZa6kXtyOyw', junitResultsFile: '', projectId: 'MTLk7RYTv0SP7IaT0Sof0Q', waitJobFinishSeconds: 30
+                browserstack(credentialsId: '373e6a65-62a7-4548-ba57-3243d5441127', localConfig: [localOptions: '', localPath: ""]) {                
+                    tpJobRun agentId: 'upP2B4Jki0e3aK5QD0wZzQ', executionParameters: '', jobId: 'lgJdDeJlDUGUiytSP-f0AA', junitResultsFile: '', projectId: 'MTLk7RYTv0SP7IaT0Sof0Q', waitJobFinishSeconds: 30
                 }
             }
         }
