@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    parameters {
+        string(name: 'token', defaultValue: '', description: 'Test project Api token')
+    }
+
     stages {
         stage ("Install requirement") {
             steps {
@@ -14,7 +19,7 @@ pipeline {
             }
             steps {
                 browserstack(credentialsId: '373e6a65-62a7-4548-ba57-3243d5441127', localConfig: [localOptions: '', localPath: ""]) {                
-                    echo "venv\\Scripts\\activate && python -m pytest \"${TEST_FILE}\" && venv\\Scripts\\deactivate.bat"
+                    echo "venv\\Scripts\\activate && set API_TOKEN=${token} && python -m pytest \"${TEST_FILE}\" && venv\\Scripts\\deactivate.bat"
                 }
             }
         }
